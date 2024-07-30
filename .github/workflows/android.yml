@@ -2,13 +2,13 @@ name: build
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "31.0.fix" ]
 #    tags:
 #      - "*"
 #push:
-#    branches: [ "fixed" ]
+#    branches: [ "31.0.fix" ]
   pull_request:
-    branches: [ "master" ]
+    branches: [ "31.0.fix" ]
 jobs:
   apk:
     name: Generate APK
@@ -49,7 +49,7 @@ jobs:
 
       - name: Build with Gradle
         # <android:run>
-        run: bash ./gradlew  assembleDebug --stacktrace #--debug
+        run: ./gradlew  assembleDebug --stacktrace #--debug
 #        env:
 #          GITHUB_TOKEN: ${{ secrets.token }}
       - name: Upload APK
