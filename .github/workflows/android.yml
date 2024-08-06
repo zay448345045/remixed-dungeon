@@ -2,13 +2,13 @@ name: build
 
 on:
   push:
-    branches: [ "31.0.fix" ]
+    branches: [ "master" ]
 #    tags:
 #      - "*"
 #push:
 #    branches: [ "31.0.fix" ]
   pull_request:
-    branches: [ "31.0.fix" ]
+    branches: [ "master" ]
 jobs:
   apk:
     name: Generate APK
@@ -19,8 +19,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Branch name
-        run: echo running on branch ${GITHUB_master}#REF##*/
+#      - name: Branch name
+#        run: echo running on branch ${GITHUB_master}#REF##*/
       # uses: fwilhe2/setup-kotlin@main
       - name: Setup Java
         uses: actions/setup-java@v4
@@ -49,7 +49,7 @@ jobs:
 
       - name: Build with Gradle
         # <android:run>
-        run: ./gradlew  assembleDebug --stacktrace #--debug
+        run: ./gradlew  assembleDebug #--stacktrace #--debug
 #        env:
 #          GITHUB_TOKEN: ${{ secrets.token }}
       - name: Upload APK
