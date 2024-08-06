@@ -2,13 +2,13 @@ name: build
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "32.1" ]
 #    tags:
 #      - "*"
 #push:
 #    branches: [ "31.0.fix" ]
   pull_request:
-    branches: [ "master" ]
+    branches: [ "32.1" ]
 jobs:
   apk:
     name: Generate APK
