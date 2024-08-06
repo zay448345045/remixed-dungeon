@@ -189,15 +189,15 @@ dependencies {
     huaweiImplementation 'com.huawei.agconnect:agconnect-crash:1.4.1.300'
 }
 
-if (getGradle().getStartParameter().getTaskRequests()
-        .toString().contains("GooglePlay")) {
-    apply plugin: 'com.google.firebase.crashlytics'
-    apply plugin: 'com.google.gms.google-services'
-    apply plugin: 'com.google.firebase.firebase-perf'
+//if (getGradle().getStartParameter().getTaskRequests()
+//        .toString().contains("GooglePlay")) {
+//    apply plugin: 'com.google.firebase.crashlytics'
+//    apply plugin: 'com.google.gms.google-services'
+//    apply plugin: 'com.google.firebase.firebase-perf'
 
 }
 
-if (getGradle().getStartParameter().getTaskRequests()
-        .toString().contains("Huawei")) {
-    apply plugin: 'com.huawei.agconnect'
+//if (getGradle().getStartParameter().getTaskRequests()
+//        .toString().contains("Huawei")) {
+//    apply plugin: 'com.huawei.agconnect'
 }
