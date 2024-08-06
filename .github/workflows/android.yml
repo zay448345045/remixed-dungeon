@@ -8,7 +8,7 @@ on:
 #push:
 #    branches: [ "31.0.fix" ]
   pull_request:
-    branches: [ "32.1" ]
+    branches: [ "31.1.fix" ]
 jobs:
   apk:
     name: Generate APK
