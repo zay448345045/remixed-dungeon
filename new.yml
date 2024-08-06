@@ -1,0 +1,63 @@
+name: build
+
+on:
+  push:
+    branches: [ "32.1" ]
+#    tags:
+#      - "*"
+#push:
+#    branches: [ "31.0.fix" ]
+#  pull_request:
+#    branches: [ "32.1" ]
+jobs:
+  apk:
+    name: Generate APK
+    runs-on: ubuntu-latest
+    # permissions:
+      # contents: read
+    #  packages: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: '32.1'
+#      - name: Branch name
+#        run: echo running on branch ${GITHUB_master}#REF##*/
+      # uses: fwilhe2/setup-kotlin@main
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+          # server-id: github # Value of the distributionManagement/repository/id field of the pom.xml
+          # settings-path: ${{ github.workspace }} # location for the settings.xml file
+          
+#      - name: Install NDK
+#        run: echo "y" | ${ANDROID_SDK_ROOT}/cmdline-tools/latest/bin/sdkmanager --install "ndk;27.0.11902837"
+        
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew
+
+      
+      
+      #- name: Gradle Build
+        #uses: gradle/actions/setup-gradle@v3.4.2
+        #env:
+          #GITHUB_TOKEN: ${{ secrets.token }}
+        #with:
+          #arguments: assembleDebug
+           
+
+
+      - name: Build with Gradle
+        # <android:run>
+        run: ./gradlew assembleDebug #--stacktrace #--debug #build
+#        env:
+#          GITHUB_TOKEN: ${{ secrets.token }}
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+         name: apk
+         path: '**/*.apk'
+#      - name: Grant execute permission for gradlew
+#        run: chmod +x gradlew
