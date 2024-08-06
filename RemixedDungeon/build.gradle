@@ -142,7 +142,7 @@ dependencies {
 
     androidImplementation 'com.google.guava:guava:31.1-android'
 
-//    androidImplementation 'com.google.android.ads.consent:consent-library:1.0.8'
+   androidImplementation 'com.google.android.ads.consent:consent-library:1.0.8'
 
     androidImplementation 'androidx.multidex:multidex:2.0.1'
 
@@ -168,19 +168,19 @@ dependencies {
     annotationProcessor 'org.projectlombok:lombok:1.18.22'
     compileOnly 'org.projectlombok:lombok:1.18.22'
 
-//    googlePlayImplementation 'com.google.android.gms:play-services-base:18.3.0'
-//    googlePlayImplementation 'com.google.android.gms:play-services-auth:21.0.0'
-//    googlePlayImplementation "com.google.android.gms:play-services-games:23.1.0"
-//    googlePlayImplementation 'com.google.android.gms:play-services-ads:23.0.0'
+    googlePlayImplementation 'com.google.android.gms:play-services-base:18.3.0'
+   googlePlayImplementation 'com.google.android.gms:play-services-auth:21.0.0'
+   googlePlayImplementation "com.google.android.gms:play-services-games:23.1.0"
+    googlePlayImplementation 'com.google.android.gms:play-services-ads:23.0.0'
 
 
-//    googlePlayImplementation 'com.android.billingclient:billing:6.2.1'
+    googlePlayImplementation 'com.android.billingclient:billing:6.2.1'
 
-//    googlePlayImplementation platform('com.google.firebase:firebase-bom:30.3.0')
+    googlePlayImplementation platform('com.google.firebase:firebase-bom:30.3.0')
 
-//    googlePlayImplementation 'com.google.firebase:firebase-analytics'
-//    googlePlayImplementation 'com.google.firebase:firebase-crashlytics'
-//    googlePlayImplementation 'com.google.firebase:firebase-perf'
+    googlePlayImplementation 'com.google.firebase:firebase-analytics'
+    googlePlayImplementation 'com.google.firebase:firebase-crashlytics'
+    googlePlayImplementation 'com.google.firebase:firebase-perf'
 
     ruStoreImplementation 'ru.rustore.sdk:billingclient:3.2.0'
 
@@ -189,15 +189,15 @@ dependencies {
     huaweiImplementation 'com.huawei.agconnect:agconnect-crash:1.4.1.300'
 }
 
-//if (getGradle().getStartParameter().getTaskRequests()
-//        .toString().contains("GooglePlay")) {
-//    apply plugin: 'com.google.firebase.crashlytics'
-//    apply plugin: 'com.google.gms.google-services'
-//    apply plugin: 'com.google.firebase.firebase-perf'
+if (getGradle().getStartParameter().getTaskRequests()
+        .toString().contains("GooglePlay")) {
+   apply plugin: 'com.google.firebase.crashlytics'
+    apply plugin: 'com.google.gms.google-services'
+    apply plugin: 'com.google.firebase.firebase-perf'
 
 }
 
-//if (getGradle().getStartParameter().getTaskRequests()
-//        .toString().contains("Huawei")) {
-//    apply plugin: 'com.huawei.agconnect'
+if (getGradle().getStartParameter().getTaskRequests()
+        .toString().contains("Huawei")) {
+    apply plugin: 'com.huawei.agconnect'
 }
