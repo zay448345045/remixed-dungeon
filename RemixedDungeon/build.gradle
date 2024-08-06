@@ -75,19 +75,19 @@ android {
     flavorDimensions "platform","market"
 
     productFlavors {
-        googlePlay {
-            dimension "market"
-            versionCode defaultConfig.versionCode + 10000
-        }
+//        googlePlay {
+//            dimension "market"
+//            versionCode defaultConfig.versionCode + 10000
+//        }
 
         ruStore {
             minSdkVersion 23
             dimension "market"
         }
 
-        fdroid {
-            dimension "market"
-        }
+//        fdroid {
+//            dimension "market"
+//        }
 
         huawei {
             minSdkVersion 19
