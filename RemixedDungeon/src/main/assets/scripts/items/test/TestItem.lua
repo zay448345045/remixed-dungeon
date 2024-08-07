@@ -148,7 +148,7 @@ return itemLib.init{
 
             RPD.glog("stored data: "..tostring(a).."|"..tostring(b)..""..tostring(c))
 
-            --[[]]
+            --[[
             ads.rewardVideoShow(RPD.createItem("Gold",'{"quantity":500}'))
             if not ads.rewardVideoReady() then
                 
@@ -156,6 +156,7 @@ return itemLib.init{
                 
                 RPD.glogn("Reward video not ready")
             end
+            ]]
 
 
             --ads.interstitialShow()
@@ -200,7 +201,7 @@ return itemLib.init{
             restoredItem = RPD.fromLua(luaDesc)
             packedItem = RPD.packEntity(restoredItem)
             RPD.glog(packedItem)
-            errFunc(packedItem)
+          --  errFunc(packedItem)
 
         end
 
@@ -259,8 +260,9 @@ return itemLib.init{
 --[[
 
     
- ]]
+ 
     bag = function(self, item)
         return "SeedPouch"
     end
+    ]]
 }
