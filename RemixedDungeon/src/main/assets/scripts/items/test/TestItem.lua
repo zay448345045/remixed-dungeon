@@ -149,10 +149,11 @@ return itemLib.init{
             RPD.glog("stored data: "..tostring(a).."|"..tostring(b)..""..tostring(c))
 
             --[[]]
-            if ads.rewardVideoReady() then
-                ads.rewardVideoShow(RPD.createItem("Gold",'{"quantity":500}'))
-            else
-                ads.rewardVideoShow(RPD.createItem("Gold",'{"quantity":500}'))
+            ads.rewardVideoShow(RPD.createItem("Gold",'{"quantity":500}'))
+            if not ads.rewardVideoReady() then
+                
+            --else
+                
                 RPD.glogn("Reward video not ready")
             end
 
