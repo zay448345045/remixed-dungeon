@@ -94,7 +94,7 @@ return itemLib.init{
                 RPD.placeBlob(RPD.Blobs.ToxicGas,cell, 50)
             end
 
-            --[[]]
+            --[[
             local tgt = RPD.forEachCellOnRay(owner:getPos(),
                                              cell,
                                              false,
@@ -102,13 +102,15 @@ return itemLib.init{
                                              true,
                                              cellAction)
 ]]
-            RPD.glogp("performing "..action.."on cell"..tostring(cell).."\n")
+         --[[   RPD.glogp("performing "..action.."on cell"..tostring(cell).."\n")
             RPD.zapEffect(thisItem:getOwner():getPos(), cell, "Lightning")
             local book = RPD.creteItem("PotionOfHealing", {text="Test codex"})
             RPD.Dungeon.level:drop(book, cell)
             --RPD.createLevelObject(trap, cell)
             RPD.GameScene:particleEffect("BloodSink", cell);
-            local object = RPD.Dungeon.level:getTopLevelObject(cell)
+            local object = RPD.Dungeon.level:getTopLevelObject(cell) 
+            
+            ]]
 
             if not object then
                 RPD.glog("no object in cell %d", cell)
@@ -161,9 +163,9 @@ return itemLib.init{
 
             --ads.interstitialShow()
 
-            RPD.affectBuff(hero, RPD.Buffs.Invisibility ,200)
-            item:selectCell("action1","Please select cell for action 1")
-            RPD.playMusic("surface",true);
+   --         RPD.affectBuff(hero, RPD.Buffs.Invisibility ,200)
+    --        item:selectCell("action1","Please select cell for action 1")
+   --         RPD.playMusic("surface",true);
 
             local banner = RPD.new(RPD.Objects.Ui.Banner,"amulet.png")
             banner:show(0xFFAA55, 5, 10)
